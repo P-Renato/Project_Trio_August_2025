@@ -3,6 +3,7 @@ import Image from "next/image";
 import "./globals.css";
 import Link from "next/link";
 
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -37,7 +38,7 @@ export default function RootLayout({
         <Image
           src="/watch.jpg"
           alt="picsum photo"
-          width={1300}
+          width={1500}
           height={600}
           className="w-screen"
         />
