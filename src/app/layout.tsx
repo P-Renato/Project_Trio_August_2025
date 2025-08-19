@@ -35,10 +35,10 @@ export default function RootLayout({
           </nav>
         </header>
         <Image
-          src="/shopping.png"
+          src="/watch.jpg"
           alt="picsum photo"
-          width={1000}
-          height={1000}
+          width={1300}
+          height={600}
           className="w-screen"
         />
         <main className="flex-1 bg-gray-200 text-gray-600">{children}</main>
