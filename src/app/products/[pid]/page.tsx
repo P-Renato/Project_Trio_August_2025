@@ -19,6 +19,7 @@ function ProductDetails() {
 
   return (
     <div>
+        
       {product ? (
         <div>
           <h2>{product.name}</h2>
