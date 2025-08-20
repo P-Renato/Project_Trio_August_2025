@@ -34,6 +34,7 @@ function ProductDetails() {
               </li>
             ))}
           </ul>
+          <button>Add to Cart</button>
         </div>
       ) : (
         <p>Loading product...</p>
