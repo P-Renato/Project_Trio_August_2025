@@ -5,10 +5,12 @@ import { Product } from "@/types/products";
 import { useParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import { fetchProductById } from "@/lib/products";
+import { useCart } from "@/context/CartContext";
 
 function ProductDetails() {
   const { pid } = useParams();
   const [product, setProduct] = useState<Product | null>(null);
+  const { dispatch } = useCart();
 
   useEffect(() => {
     if (!pid) return;
@@ -34,7 +36,7 @@ function ProductDetails() {
               </li>
             ))}
           </ul>
-          <button>Add to Cart</button>
+          <button onClick={()=>dispatch({type: 'ADD_TO_CART', payload:product})}>Add to Cart</button>
         </div>
       ) : (
         <p>Loading product...</p>

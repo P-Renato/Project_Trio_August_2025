@@ -1,14 +1,4 @@
-import { Product } from "@/types/products";
-
-export type State = {
-    cart: Product[];
-    products: Product[];
-}
-
-export type Action = {
-    type: string,
-    payload?: any;
-}
+import { State, Action } from "@/types/products";
 
 export const initialState = {
     cart: [],
@@ -22,6 +12,10 @@ export const reducer = (state: State, action: Action): State => {
         case 'ADD_TO_CART':
             newState.cart.push(action.payload);
             return newState;
+        
+        case 'REMOVE_FROM_CART':
+            newState.cart = newState.cart.filter((p) => p.id !== action.payload);
+
         default:
             return state;
     }

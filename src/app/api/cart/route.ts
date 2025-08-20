@@ -27,6 +27,6 @@ export async function POST(req: Request) {
 
         return NextResponse.json({cart});
     } catch(err){
-        return NextResponse.json({ error: "Faied to add item"}, {status: 500});
+        return NextResponse.json({ error: "Failed to add item"}, {status: 500});
     }
 }

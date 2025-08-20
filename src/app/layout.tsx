@@ -1,35 +1,36 @@
-import Link from "next/link";
-import { FaShoppingCart } from "react-icons/fa";
+import type { Metadata } from "next";
+import Image from "next/image";
 import "./globals.css";
+import { CartProvider } from "@/context/CartContext";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
+export const metadata: Metadata = {
+  title: "Sprint Onlineshop<",
+  description: "Shopping cart demo",
+};
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
-    <html>
-      <head>
-        <title>Trio project</title>
-      </head>
+    <html lang="en">
       <body>
-        <header className="flex flex-row w-full justify-between">
-          <nav >
-            <ul className="flex p-3 ">
-              <li><Link href="/">home</Link></li>
-              <li><Link href="/contact">Contact</Link></li>
-              <li><Link href="/products">Products</Link></li>
-            </ul>
-          </nav>
-          <nav>
-            <Link href="/checkout">
-              <FaShoppingCart size={20} />
-            </Link>
-          </nav>
-        </header>
-        <main>{children}</main>
+        <CartProvider>
+          <Header />   
+          <Image
+          src="/watch.jpg"
+          alt="picsum photo"
+          width={1500}
+          height={600}
+          className="w-screen"
+        />
+          <main  className="flex-1 bg-gray-200 text-gray-600">{children}</main>
+          <Footer />
+        </CartProvider>
       </body>
     </html>
-  )
+  );
 }

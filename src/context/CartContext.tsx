@@ -1,17 +1,15 @@
 'use client';
-import { ReactNode, useReducer, createContext } from 'react';
-import { reducer, initialState, State, Action } from '../reducer/CartReducer';
+import { ReactNode, useReducer, createContext, useContext } from 'react';
+import { reducer, initialState} from '../reducer/CartReducer';
+import { CartContextType } from "@/types/products";
 
-type CartContextType = {
-    state: State;
-    dispatch: React.Dispatch<Action>;
-};
 
 const CartContext = createContext<CartContextType | undefined>(undefined);
 
 export function CartProvider({children}: {children: ReactNode}) {
     const [state, dispatch] = useReducer(reducer, initialState);
 
+  
     return (
         <CartContext.Provider value={{state,dispatch}}>
             {children}
@@ -19,3 +17,10 @@ export function CartProvider({children}: {children: ReactNode}) {
     );
 }
 
+export function useCart() {
+    const context = useContext(CartContext);
+    if(!context) {
+        throw new Error('useCart must be inside CartProvider')
+    }
+    return context;
+}
