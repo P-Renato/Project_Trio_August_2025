@@ -1,8 +1,8 @@
 
+
 import Image from "next/image";
 import "./globals.css";
 import Link from "next/link";
-
 
 export default function RootLayout({
   children,
@@ -10,6 +10,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
+
     <html lang="en">
       <head>
         <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
@@ -52,4 +53,5 @@ export default function RootLayout({
       </body>
     </html>
   );
+
 }
