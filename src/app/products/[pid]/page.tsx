@@ -6,6 +6,14 @@ import { useParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import { fetchProductById } from "@/lib/products";
 import { useCart } from "@/context/CartContext";
+import Image from "next/image";
+import { Geist } from 'next/font/google';
+ 
+const geist = Geist({
+  subsets: ['latin'],
+  weight: '600',
+  
+})
 
 function ProductDetails() {
   const { pid } = useParams();
@@ -26,13 +34,13 @@ function ProductDetails() {
         
       {product ? (
         <div>
-          <h2>{product.name}</h2>
+          <h2 className={geist.className}>{product.name}</h2>
           <p>{product.category}</p>
           <p>&euro;{product.price.toFixed(2)}</p>
           <ul className="flex flex-wrap">
             {product.image.map((img, i) => (
               <li key={i} className="w-xs">
-                <img src={img} alt={`${product.name} ${i}`} />
+                <Image src={img} alt={`${product.name} ${i}` } width={400} height={200}/>
               </li>
             ))}
           </ul>
