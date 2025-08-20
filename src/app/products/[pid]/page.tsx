@@ -17,6 +17,8 @@ function ProductDetails() {
       .catch((err) => console.error(err));
   }, [pid]);
 
+  console.log(product)
+
   return (
     <div>
         

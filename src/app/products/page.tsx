@@ -33,6 +33,7 @@ export default function page() {
                                 <h3>{p.name}</h3>
                                 <p>{p.category}</p>
                                 <Image src={p.image[0]} alt={p.name} width={1000} height={250}/>
+                                <button>Add to Cart</button>
                             </li>
                         </Link>
                     ))}
