@@ -1,0 +1,44 @@
+[
+  {
+    "_id": "6784278ed85882b85814f480",
+    "id": "4",
+    "name": "Leather Messenger Bag",
+    "category": "Accessories",
+    "price": 79.99,
+    "rating": 4.3,
+    "stock": 45,
+    "image": [
+      "https://images.pexels.com/photos/2393813/pexels-photo-2393813.jpeg",
+      "https://images.pexels.com/photos/5627259/pexels-photo-5627259.jpeg",
+      "https://images.pexels.com/photos/8702321/pexels-photo-8702321.jpeg",
+      "https://images.pexels.com/photos/322207/pexels-photo-322207.jpeg",
+      "https://images.pexels.com/photos/167703/pexels-photo-167703.jpeg",
+      "https://images.pexels.com/photos/22856153/pexels-photo-22856153.jpeg",
+      "https://images.pexels.com/photos/3808249/pexels-photo-3808249.jpeg",
+      "https://images.pexels.com/photos/17938771/pexels-photo-17938771.jpeg",
+      "https://images.pexels.com/photos/768975/pexels-photo-768975.jpeg",
+      "https://images.pexels.com/photos/8105970/pexels-photo-8105970.jpeg"
+    ]
+  },
+  {
+    "_id": "6784278ed85882b85814f480",
+    "id": "4",
+    "name": "Leather Messenger Bag",
+    "category": "Accessories",
+    "price": 79.99,
+    "rating": 4.3,
+    "stock": 45,
+    "image": [
+      "https://images.pexels.com/photos/2393813/pexels-photo-2393813.jpeg",
+      "https://images.pexels.com/photos/5627259/pexels-photo-5627259.jpeg",
+      "https://images.pexels.com/photos/8702321/pexels-photo-8702321.jpeg",
+      "https://images.pexels.com/photos/322207/pexels-photo-322207.jpeg",
+      "https://images.pexels.com/photos/167703/pexels-photo-167703.jpeg",
+      "https://images.pexels.com/photos/22856153/pexels-photo-22856153.jpeg",
+      "https://images.pexels.com/photos/3808249/pexels-photo-3808249.jpeg",
+      "https://images.pexels.com/photos/17938771/pexels-photo-17938771.jpeg",
+      "https://images.pexels.com/photos/768975/pexels-photo-768975.jpeg",
+      "https://images.pexels.com/photos/8105970/pexels-photo-8105970.jpeg"
+    ]
+  }
+]

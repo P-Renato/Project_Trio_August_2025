@@ -11,11 +11,22 @@ export const reducer = (state: State, action: Action): State => {
     switch (action.type) {
         case 'ADD_TO_CART':
             newState.cart.push(action.payload);
+
+            fetch("/api/cart", {
+                method: "POST",
+                headers: { "Content-Type": "application/json"},
+                body: JSON.stringify(action.payload),
+            });
             return newState;
         
         case 'REMOVE_FROM_CART':
             newState.cart = newState.cart.filter((p) => p.id !== action.payload);
 
+            fetch("/api/cart", {
+                method: "DELETE",
+                headers: { "Content-Type": "application/json"},
+                body: JSON.stringify({id: action.payload}),
+            })
         default:
             return state;
     }
