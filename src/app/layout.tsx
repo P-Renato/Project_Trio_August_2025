@@ -1,8 +1,8 @@
 
-
 import Image from "next/image";
 import "./globals.css";
 import Link from "next/link";
+import { FaShoppingCart } from "react-icons/fa";
 
 export default function RootLayout({
   children,
@@ -30,10 +30,15 @@ export default function RootLayout({
               <li className="hover:text-orange-600 cursor-pointer">
                 <Link href="/products">Products</Link>
               </li>
-              <li className="hover:text-orange-600 cursor-pointer">
+              {/* <li className="hover:text-orange-600 cursor-pointer">
                 <Link href="/checkout">Checkout</Link>
-              </li>
+              </li> */}
             </ul>
+          </nav>
+          <nav>
+            <Link href="/checkout">
+              <FaShoppingCart size={20} />
+            </Link>
           </nav>
         </header>
         <Image

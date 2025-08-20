@@ -33,7 +33,7 @@ export default function page() {
                             <li key={p.id}>
                                 <h3>{p.name}</h3>
                                 <p>{p.category}</p>
-                                <Image src={p.image[0]} alt={p.name} width={1000} height={250}/>
+                                <Image src={p.image[0]} alt={p.name} width={800} height={250}/>
                             </li>
                         </Link>
                     ))}
