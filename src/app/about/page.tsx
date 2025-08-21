@@ -85,7 +85,7 @@ function page() {
  
       
 
-      <h3>John bake</h3>
+      <h3>Johanna blake</h3>
 
   
       <p className="text-gray-600 leading-relaxed">
@@ -109,7 +109,7 @@ function page() {
    
       
 
-      <h3>John bake</h3>
+      <h3>Jemes bake</h3>
 
     
       <p className="text-gray-600 leading-relaxed">
@@ -132,7 +132,7 @@ function page() {
 
       
 
-      <h3>John bake</h3>
+      <h3>Jossie bake</h3>
 
    
       <p className="text-gray-600 leading-relaxed">
@@ -156,7 +156,7 @@ function page() {
   
       
 
-      <h3>John bake</h3>
+      <h3>Jane blake</h3>
 
      
       <p className="text-gray-600 leading-relaxed">
