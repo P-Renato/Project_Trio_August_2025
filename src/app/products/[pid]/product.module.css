@@ -1,0 +1,12 @@
+
+
+.image_container {
+    display: grid;
+    grid-template-columns: 3fr 1fr .5fr;
+    grid-template-rows: 3fr 1fr;
+}
+
+.add_to_cart_button {
+    width: 12rem;
+    border: 3px solid #f3f3f3;
+}
