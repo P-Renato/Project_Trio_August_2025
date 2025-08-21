@@ -26,7 +26,10 @@ export default function Page() {
   const loadMore = async () => {
     setLoading(true)
     try {
-      const newProducts = await fetchProducts(page, 5) // pass page + limit to backend
+      const allProducts = await fetchProducts()
+      const start = (page - 1) * 3
+      const end = page * 3
+      const newProducts = allProducts.slice(start, end)
       setProducts(prev => [...prev, ...newProducts])
       setPage(prev => prev + 1)
       if (newProducts.length === 0) setHasMore(false)
@@ -39,7 +42,7 @@ export default function Page() {
 
   return (
     <main className="flex flex-col justify-center items-center *:p-3">
-      <h1 className={roboto.className}>Products</h1>
+      <h1 className={`${roboto.className} `}>Products</h1>
       <nav>
         <ul className="flex flex-wrap w-full">
           {products.map((p) => (
