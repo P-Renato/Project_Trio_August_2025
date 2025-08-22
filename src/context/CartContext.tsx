@@ -4,7 +4,7 @@ import { reducer, initialState} from '../reducer/CartReducer';
 import { CartContextType } from "@/types/products";
 
 
-const CartContext = createContext<CartContextType | undefined>(undefined);
+export const CartContext = createContext<CartContextType | undefined>(undefined);
 
 export function CartProvider({children}: {children: ReactNode}) {
     const [state, dispatch] = useReducer(reducer, initialState);

@@ -32,6 +32,22 @@ export async function GET() {
   }
 }
 
+// PUT - overwrite entire cart
+export async function PUT(req: Request) {
+  try {
+    const newCart = await req.json();
+    await writeCartFile(newCart);
+
+    return NextResponse.json({ success: true, cart: newCart });
+  } catch {
+    return NextResponse.json(
+      { error: "Failed to update cart" },
+      { status: 500 }
+    );
+  }
+}
+
+
 // POST - add item
 export async function POST(req: Request) {
   try {

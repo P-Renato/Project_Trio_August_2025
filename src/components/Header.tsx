@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { FaShoppingCart } from "react-icons/fa";
 import { useCart } from "@/context/CartContext";
+import { HiUser } from "react-icons/hi2";
 
 export default function Header() {
   const { state } = useCart();
@@ -24,6 +25,9 @@ export default function Header() {
         </ul>
       </nav>
       <nav className="flex items-center gap-2">
+        <Link href="/login">
+         <HiUser />
+        </Link>
         <Link href="/checkout" className="flex items-center gap-1">
           <FaShoppingCart size={20} />
           <span>{state.cart.length}</span> 

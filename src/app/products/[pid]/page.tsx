@@ -36,7 +36,7 @@ function ProductDetails() {
       {product ? (
         <div className="flex flex-row">
           
-          <nav className={`${productStyle.image_container}`}>
+          <nav className={`${productStyle.image_container}` }>
             <ul className="flex flex-wrap *:m-2 ">
               {product.image.map((img, i) => (
                 <li key={i} className="w-xs">
@@ -45,7 +45,7 @@ function ProductDetails() {
               ))}
             </ul>
           </nav>
-          <nav className="m-6 p-6 *:m-3">
+          <nav className="m-6 p-6 *:m-3 border border-white h-[12em] bg-gray-300">
             <h2 className={geist.className}>{product.name}</h2>
             <p>{product.category}</p>
             <p>&euro;{product.price.toFixed(2)}</p>
