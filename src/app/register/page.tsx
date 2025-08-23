@@ -19,13 +19,13 @@ const registerFormSchema = z.object({
   username: z.string().min(2, {
     message: "Please insert your username"
   }),
-  email: z.string().min(8, {
+  email: z.string().min(1, {
     message: "Please insert your email"
   }),
-  password: z.string().min(8, {
-    message: "Password must be at least 8 characters."
+  password: z.string().min(1, {
+    message: "Password insertion"
   }),
-  confirmPassword: z.string().min(8, {
+  confirmPassword: z.string().min(1, {
     message: "Confirm your password."
   }),
 });
@@ -42,12 +42,13 @@ export default function RegisterPage() {
   });
 
     function onSubmit(values: z.infer<typeof registerFormSchema>) {
-    console.log("Login Form Values:", values);
-  }
+      console.log("Register Form Values:", values);
+    }
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4 flex flex-col justify-center items-center p-6">
+      <form onSubmit={
+        form.handleSubmit(onSubmit)} className="space-y-4 flex flex-col justify-center items-center p-6">
         <FormField
           control={form.control}
           name="username"
@@ -59,43 +60,47 @@ export default function RegisterPage() {
               </FormControl>
               <FormMessage />
             </FormItem>
-          )} />
-          <FormField
+          )} 
+        />
+        <FormField
           control={form.control}
           name="email"
           render={({ field }) => (
             <FormItem>
               <FormLabel>Email</FormLabel>
               <FormControl>
-                <Input placeholder="Enter your email" {...field} />
+                <Input type="email" placeholder="Enter your email" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
-          )} />
-          <FormField
+          )} 
+        />
+        <FormField
           control={form.control}
           name="password"
           render={({ field }) => (
             <FormItem>
               <FormLabel>Password</FormLabel>
               <FormControl>
-                <Input placeholder="Enter your password" {...field} />
+                <Input  type="password"  placeholder="Enter your password" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
-          )} />
-          <FormField
+          )} 
+        />
+        <FormField
           control={form.control}
           name="confirmPassword"
           render={({ field }) => (
             <FormItem>
               <FormLabel>Confirm Password</FormLabel>
               <FormControl>
-                <Input placeholder="Confirm your password" {...field} />
+                <Input type="password" placeholder="Confirm your password" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
-          )} />
+          )} 
+        />
           <Button className="cursor-pointer" type="submit">Register</Button>
       </form>
     </Form>

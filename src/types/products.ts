@@ -28,3 +28,17 @@ export type CartContextType = {
     state: State;
     dispatch: React.Dispatch<Action>;
 };
+
+export type StoredUser = {
+    id: number,
+    username: string,
+    password: string,
+}
+
+export type RegisterUser = {
+    id: number,
+    username: string,
+    email: string,
+    password: string,
+    confirmPassword: string,
+}

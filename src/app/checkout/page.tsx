@@ -38,12 +38,12 @@ export default function CheckoutPage() {
   const handleCheckout = async () => {
     try {
       await fetch("/api/cart", {
-        method: "PUT", // clear the cart
+        method: "PUT", 
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify([]),
       })
       alert("✅ Order placed successfully!")
-      router.push("/") // or /checkout/success
+      router.push("/") 
     } catch (err) {
       console.error("Checkout failed:", err)
       alert("❌ Something went wrong")

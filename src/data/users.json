@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "username": "Johnny",
+    "email": "johnny123@gmail.com",
+    "password": "$2b$10$WlClR6qVzB9cgbYfzh3WTezHp315bIytXSnuFo5EiBaoW5/Jo4Z6e",
+    "confirmPassword": "$2b$10$WlClR6qVzB9cgbYfzh3WTezHp315bIytXSnuFo5EiBaoW5/Jo4Z6e"
+  },
+  {
+    "id": 2,
+    "username": "John",
+    "email": "john123@gmail.com",
+    "password": "$2b$10$DjLgA0OTuh8t1lW3C0Cac..qdA7ZJ0jjEU3L9zgXJI.JFTi1lF0m6",
+    "confirmPassword": "$2b$10$DjLgA0OTuh8t1lW3C0Cac..qdA7ZJ0jjEU3L9zgXJI.JFTi1lF0m6"
+  }
+]
