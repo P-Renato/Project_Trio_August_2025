@@ -27,6 +27,7 @@ export const reducer = (state: State, action: Action): State => {
                 headers: { "Content-Type": "application/json"},
                 body: JSON.stringify({id: action.payload}),
             })
+            return newState;
         default:
             return state;
     }

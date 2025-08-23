@@ -74,7 +74,7 @@ export default function LoginPage() {
           )}
         />
         <Link href="/register">Register here!</Link>
-        <Button type="submit" className="w-full">Log In</Button>
+        <Button type="submit" className="w-[30%]">Log In</Button>
       </form>
     </Form>
   );

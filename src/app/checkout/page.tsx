@@ -1,12 +1,16 @@
 'use client'
 
-import { useEffect, useState } from "react"
-import { useRouter } from "next/navigation"
+import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
+import { useCart } from "@/context/CartContext";
+import ProductDetails from "../products/[pid]/page";
+
 
 export default function CheckoutPage() {
   const [cart, setCart] = useState<any[]>([])
   const [loading, setLoading] = useState(true)
   const router = useRouter()
+    const { dispatch } = useCart();
 
   // Fetch cart on load
   useEffect(() => {
@@ -61,9 +65,10 @@ export default function CheckoutPage() {
               <li key={i} className="border p-2 mb-2">
                 <div className="flex justify-between">
                   <span>
-                    {item.name} × {item.quantity || 1}
+                    <span>{item.name} × {item.quantity || 1}</span>
+                    <span className="ml-3">€{(item.price * (item.quantity || 1)).toFixed(2)}</span>
                   </span>
-                  <span>€{(item.price * (item.quantity || 1)).toFixed(2)}</span>
+                  <span><button onClick={()=>dispatch({type: 'REMOVE_FROM_CART', payload: item.id})}>Remove Item</button></span>
                 </div>
               </li>
             ))}
