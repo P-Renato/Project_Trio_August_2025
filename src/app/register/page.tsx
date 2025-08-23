@@ -4,7 +4,6 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
-// Import the Shadcn/UI components you've installed
 import { Button } from "@/components/ui/button";
 import {
   Form,
@@ -48,7 +47,7 @@ export default function RegisterPage() {
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)}>
+      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4 flex flex-col justify-center items-center p-6">
         <FormField
           control={form.control}
           name="username"
@@ -97,7 +96,7 @@ export default function RegisterPage() {
               <FormMessage />
             </FormItem>
           )} />
-          <Button type="submit">Register</Button>
+          <Button className="cursor-pointer" type="submit">Register</Button>
       </form>
     </Form>
   )
