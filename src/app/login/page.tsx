@@ -16,19 +16,23 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
+import { useRouter } from "next/navigation";
+
 
 // 1. Define the Schema for LOGIN (only 2 fields)
 const loginFormSchema = z.object({
-  username: z.string().min(2, {
+  username: z.string().min(1, {
     message: "Username must be at least 2 characters.",
   }),
-  password: z.string().min(4, {
+  password: z.string().min(1, {
     message: "Password must be at least 4 characters.",
   }),
 });
 
 // This is the key change: using 'export default' instead of just 'export'
 export default function LoginPage() {
+  const router = useRouter();
+
   // 2. Initialize the Form (React Hook Form)
   const form = useForm<z.infer<typeof loginFormSchema>>({
     resolver: zodResolver(loginFormSchema),
@@ -38,10 +42,32 @@ export default function LoginPage() {
     },
   });
 
+
   // 3. Define the submit handler
-  function onSubmit(values: z.infer<typeof loginFormSchema>) {
+  async function onSubmit(values: z.infer<typeof loginFormSchema>) {
     console.log("Login Form Values:", values);
+    
+
+    try{
+      const response = await fetch('/api/auth/login', { 
+        method: "POST", 
+        headers: {
+            "Content-Type": 'application/json',
+        },
+        body: JSON.stringify(values)
+    });
+    if(!response.ok){
+      throw new Error('Login failed')
+    }
+
+    const data = await response.json();
+    console.log("Login successful: ", data);
+    router.push('/')
   }
+  catch(err){
+    console.error('Login fetch failed ', err);
+  }
+}
 
   // 4. Build the UI
   return (

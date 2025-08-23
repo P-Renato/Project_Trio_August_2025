@@ -14,6 +14,7 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
+import { useRouter } from "next/navigation";
 
 const registerFormSchema = z.object({
   username: z.string().min(2, {
@@ -31,6 +32,7 @@ const registerFormSchema = z.object({
 });
 
 export default function RegisterPage() {
+  const router = useRouter();
   const form = useForm<z.infer<typeof registerFormSchema>>({
     resolver: zodResolver(registerFormSchema),
     defaultValues: {
@@ -41,8 +43,29 @@ export default function RegisterPage() {
     },
   });
 
-    function onSubmit(values: z.infer<typeof registerFormSchema>) {
+  async function onSubmit(values: z.infer<typeof registerFormSchema>) {
       console.log("Register Form Values:", values);
+
+      
+      try{
+        const response = await fetch('/api/auth/register', {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",  
+          },
+          body: JSON.stringify(values),
+        });
+        if(!response.ok) {
+          throw new Error("Register failed")
+        }
+        const data = await response.json();
+        console.log("Register successful: ", data)
+
+        router.push('/login');
+      }
+      catch(err){
+        console.error("Register failed: ", err)
+      }
     }
 
   return (

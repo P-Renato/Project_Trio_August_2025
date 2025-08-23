@@ -12,5 +12,19 @@
     "email": "john123@gmail.com",
     "password": "$2b$10$DjLgA0OTuh8t1lW3C0Cac..qdA7ZJ0jjEU3L9zgXJI.JFTi1lF0m6",
     "confirmPassword": "$2b$10$DjLgA0OTuh8t1lW3C0Cac..qdA7ZJ0jjEU3L9zgXJI.JFTi1lF0m6"
+  },
+  {
+    "id": 3,
+    "username": "asd",
+    "email": "asd@asd.com",
+    "password": "$2b$10$3sdGtyUWsrpuGvuq2PlIp.IpIVRcIzeVXUiTPo0zjdVlv7g8HoeJu",
+    "confirmPassword": "$2b$10$3sdGtyUWsrpuGvuq2PlIp.IpIVRcIzeVXUiTPo0zjdVlv7g8HoeJu"
+  },
+  {
+    "id": 4,
+    "username": "zxc",
+    "email": "zxc@zxc.com",
+    "password": "$2b$10$yg2DVSs38oay02feo4IvPupNM2q9coGneP3s9Mx7DRD3Re7tso/9O",
+    "confirmPassword": "$2b$10$yg2DVSs38oay02feo4IvPupNM2q9coGneP3s9Mx7DRD3Re7tso/9O"
   }
 ]

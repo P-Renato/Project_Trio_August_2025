@@ -1,4 +1,4 @@
-import { Product } from "@/types/products";
+import { Product, StoredUser } from "@/types/products";
 
 
 // Here is the fectching from all the products
@@ -17,3 +17,4 @@ export async function fetchProductById(id: string | number): Promise<Product> {
     const data = await res.json();
     return data.product;
 }
+
